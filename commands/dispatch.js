@@ -18,6 +18,7 @@ module.exports = {
       } catch (error) {}
 		});
     interaction.guild.panelMsg = await chn.send(this.getPanelMsg(interaction));
+    interaction.guild.userMap = {};
     await chn.send({
       content: `### Disponibilité`,
 			components: this.dispComponents()
