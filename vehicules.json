@@ -1,0 +1,54 @@
+{
+	"sandstorm1": {
+		"name": "SandStorm 1",
+		"emoji": "🚙"
+	},
+	"sandstorm2": {
+		"name": "SandStorm 2",
+		"emoji": "🚙"
+	},
+	"sandstorm3": {
+		"name": "SandStorm 3",
+		"emoji": "🚙"
+	},
+	"ladder1": {
+		"name": "Ladder 1",
+		"emoji": "🪜"
+	},
+	"rescue1": {
+		"name": "Rescue 1",
+		"emoji": "🚨"
+	},
+	"rescue2": {
+		"name": "Rescue 2",
+		"emoji": "🚨"
+	},
+	"rescue3": {
+		"name": "Rescue 3",
+		"emoji": "🚨"
+	},
+	"engine1": {
+		"name": "Engine 1",
+		"emoji": "🚒"
+	},
+	"engine2": {
+		"name": "Engine 2",
+		"emoji": "🚒"
+	},
+	"engine3": {
+		"name": "Engine 3",
+		"emoji": "🚒"
+	},
+	"watertank1": {
+		"name": "Watertank 1",
+		"emoji": "💧"
+	},
+	"watertank2": {
+		"name": "Watertank 2",
+		"emoji": "💧"
+	},
+	"commandement1": {
+		"name": "Commandement 1",
+		"emoji": "☎️"
+	}
+}

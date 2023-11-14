@@ -1,0 +1,20 @@
+{
+  "name": "21jc-caserne",
+  "version": "1.0.0",
+  "description": "21 JC Caserne bot",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "node deploy.js",
+    "start": "node index.js",
+    "purge": "node purge.js"
+  },
+  "author": "Makusu",
+  "license": "ISC",
+  "dependencies": {
+    "bufferutil": "^4.0.8",
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.3.1",
+    "utf-8-validate": "^6.0.3",
+    "zlib-sync": "^0.1.9"
+  }
+}
