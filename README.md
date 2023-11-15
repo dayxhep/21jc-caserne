@@ -13,12 +13,14 @@ L'url du bot devrait ressembler à ça:
 
 # Installation
 
-Remplir le `.env` :
+Créer et remplir le `env.json` à la racine :
 
 ```
-CLIENT_ID=<ID user du bot Discord>
-CLIENT_TOKEN=<Token du bot discord>
-AUTHOR_ID=<ID du user admin>
+{
+  "CLIENT_ID": "<ID user du bot Discord>",
+  "CLIENT_TOKEN": "<Token du bot discord>",
+  "AUTHOR_ID": "<ID du user admin>"
+}
 ```
 
 Le AUTHOR_ID est utilisé dans le cadre des commandes en MP ex: "/restart" pour forcer un redémarrage en MP du bot.
