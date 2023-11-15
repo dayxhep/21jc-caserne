@@ -1,8 +1,8 @@
-require('dotenv').config();
 const fs = require('fs');
 const EventEmitter = require('node:events');
 const { REST, Routes } = require('discord.js');
 const wait = require('node:timers/promises').setTimeout;
+const Config = require('./env.json');
 
 /**
 * Deployment function
@@ -19,7 +19,7 @@ function runDeploy (filter = (() => true)) {
     commands.push(command.data.toJSON());
   }
   
-  const rest = new REST().setToken(process.env.CLIENT_TOKEN);
+  const rest = new REST().setToken(Config.CLIENT_TOKEN);
   
   const observable = new EventEmitter();
   client.guilds.fetch().then(async guilds => {
@@ -30,7 +30,7 @@ function runDeploy (filter = (() => true)) {
       let prom = new Promise(async (resolve, reject) => {
         const guild = await client.guilds.cache.get(_guild.id);
         
-        rest.put(Routes.applicationGuildCommands(process.env.CLIENT_ID, _guild.id), { body: commands })
+        rest.put(Routes.applicationGuildCommands(Config.CLIENT_ID, _guild.id), { body: commands })
         .then(async () => {
           observable.emit('successPatch', commands, guild);
           resolve();

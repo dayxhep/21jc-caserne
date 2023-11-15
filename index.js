@@ -1,5 +1,4 @@
-require('dotenv').config();
-
+const Config = require('./env.json');
 const { Client, GatewayIntentBits, Events, Partials } = require('discord.js');
 const { loadCommands } = require('./helpers');
 const globals = require('./globals');
@@ -17,6 +16,7 @@ const client = new Client({ intents: [
 ]});
 
 global.client = client;
+client.config = Config;
 
 loadCommands(client);
 
@@ -26,7 +26,7 @@ client.once(Events.ClientReady, async () => {
 		if(command.init) command.init(client);
 	});
 	client.adminCmds.forEach(command => {
-		if(command.init) command.init(client, process.env.AUTHOR_ID);
+		if(command.init) command.init(client, Config.AUTHOR_ID);
 	});
 });
 
@@ -49,7 +49,7 @@ client.on(Events.InteractionCreate, async interaction => {
 
 client.on(Events.MessageCreate, async message => {
 	const adminCmd = client.adminCmds.get(message.content.split(' ')[0]);
-	if(!adminCmd || message.author.id !== process.env.AUTHOR_ID) return;
+	if(!adminCmd || message.author.id !== Config.AUTHOR_ID) return;
 	
 	try {
 		await adminCmd.execute(message, client);
@@ -58,4 +58,4 @@ client.on(Events.MessageCreate, async message => {
 	}
 });
 
-client.login(process.env.CLIENT_TOKEN);
+client.login(Config.CLIENT_TOKEN);

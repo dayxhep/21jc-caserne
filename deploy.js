@@ -1,4 +1,4 @@
-require('dotenv').config();
+const Config = require('./env.json');
 const { Client, GatewayIntentBits, Events } = require('discord.js');
 const { runDeploy } = require('./manage');
 
@@ -30,4 +30,4 @@ client.once(Events.ClientReady, async function run () {
   });
 });
 
-client.login(process.env.CLIENT_TOKEN);
+client.login(Config.CLIENT_TOKEN);

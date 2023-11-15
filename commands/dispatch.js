@@ -8,10 +8,10 @@ module.exports = {
 		.setName('dispatch')
 		.setDescription('Créé un panel de dispatch'),
 	async execute(interaction) {
-		await interaction.deferReply();
+		if(!interaction.deferred) await interaction.deferReply();
     const chn = await interaction.guild.channels.fetch(interaction.channelId);
 		let oldMsgs = await chn.messages.fetch()
-		oldMsgs = oldMsgs.filter(m => m.author.id === process.env.CLIENT_ID);
+		oldMsgs = oldMsgs.filter(m => m.author.id === client.config.CLIENT_ID);
 		oldMsgs.forEach(message => {
 			try {
         message.delete();
